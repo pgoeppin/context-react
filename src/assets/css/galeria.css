@@ -33,6 +33,13 @@
   align-self: flex-end;
 }
 
+.galeria .foto p {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .p-3 {
   padding: 30px;
 }
