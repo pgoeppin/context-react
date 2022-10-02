@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const ContextApi = React.createContext({});
 
- 
 const ApiProvider = (props) => {
   /* definir los hooks useState */
   const [picList, setPicList] = React.useState([]);
@@ -25,21 +24,24 @@ const ApiProvider = (props) => {
   const likePhoto = (id) => {
     const favPics = picList.map((element) => {
       if (element.id === id) {
-        return { ...element, liked: !element.liked}
+        return { ...element, liked: !element.liked };
       }
-      return element
+      return element;
     });
-    setPicList(favPics)
+    setPicList(favPics);
     /* para elegir las fotos con like */
-    setFavPicList(favPics.filter((element) => {
-      if (element.liked === true) {
-        return element
-      }
-    }))
-    
-  }; 
+    setFavPicList(
+      favPics.filter((element) => {
+        if (element.liked === true) {
+          return element;
+        }
+      })
+    );
+  };
   return (
-    <ContextApi.Provider value={{ picList, setPicList, likePhoto, setFavPicList, favPicList }}>
+    <ContextApi.Provider
+      value={{ picList, setPicList, likePhoto, setFavPicList, favPicList }}
+    >
       {props.children}
     </ContextApi.Provider>
   );

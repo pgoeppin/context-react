@@ -8,23 +8,28 @@ import ApiProvider from "./context/ContextAPI";
 
 export default function App() {
   return (
-    <div className="App">     
+    <div className="App">
       <BrowserRouter>
         <Navbar />
-      
+
         <Routes>
-        
-          <Route path="/" element={
-          <ApiProvider>
-            <Home />
-          </ApiProvider>} />
-          <Route path="/favoritos" element={
-          <ApiProvider>
-            <Favoritos />
-          </ApiProvider>} />
-        
+          <Route
+            path="/"
+            element={
+              <ApiProvider>
+                <Home />
+              </ApiProvider>
+            }
+          />
+          <Route
+            path="/favoritos"
+            element={
+              <ApiProvider>
+                <Favoritos />
+              </ApiProvider>
+            }
+          />
         </Routes>
-      
       </BrowserRouter>
     </div>
   );

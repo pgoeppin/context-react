@@ -15,7 +15,7 @@ export default function Home() {
           style={{ backgroundImage: `url(${element.src.landscape})` }}
           onClick={() => likePhoto(element.id, picList, setPicList)}
         >
-          <Heart filled={element.liked}  />
+          <Heart filled={element.liked} />
           <p>{element.alt}</p>
         </div>
       ))}
